@@ -1,0 +1,101 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    .outerBox {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 2%;
+    }
+    .box {
+      border-radius: 3px;
+      min-width: 20vw;
+      max-width: 34vw;
+      min-height: 3vw;
+      max-height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flashText {
+      /* margin-right: 30px; */
+      font-size: 18px;
+      font-family: "Varela Round", sans-serif;
+      text-align: center;
+    }
+
+    .flashXIcon {
+      font-size: 1em;
+    }
+
+    i:hover {
+      cursor: pointer;
+    }
+
+    p {
+      margin: 0;
+    }
+    @media ((max-width: 750px)) {
+      .box {
+        width: 45vw;
+        height: auto;
+        aspect-ratio: 1/0.2;
+      }
+      .flashText {
+        font-size: 2.8vw;
+        /* margin-right:  */
+      }
+      .flashXIcon {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <% if(success && success.length) { %>
+  <div class="outerBox">
+    <div
+      class="box"
+      style="
+        background-color: rgb(98, 204, 98);
+        border: 1px solid rgb(42, 133, 42);
+        padding: 0px 10px;
+      "
+    >
+      <p class="flashText" style="color: #146b02"><%= success %></p>
+      <i class="fa-solid fa-xmark flashXIcon" style="color: #146b02"></i>
+    </div>
+  </div>
+  <% } %> <% if(error && error.length>0) {%>
+  <div class="outerBox">
+    <div
+      class="box"
+      style="
+        background-color: rgb(233, 118, 118);
+        border: 1px solid rgb(179, 67, 67);
+        padding: 0px 10px;
+      "
+    >
+      <p class="flashText" style="color: #ac2424"><%= error %></p>
+      <i class="fa-solid fa-xmark flashXIcon" style="color: #941919"></i>
+    </div>
+  </div>
+  <% } %>
+  <script>
+    const cancelIcons = document.querySelectorAll(".fa-xmark");
+
+    cancelIcons.forEach((icon) => {
+      icon.addEventListener("click", function () {
+        icon.parentNode.style.display = "none";
+      });
+    });
+  </script>
+</body>
