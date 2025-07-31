@@ -1,4 +1,4 @@
-nternship Task 1: Login & Registration Form with Backend
+Internship Task 1: Login & Registration Form with Backend
 Project Overview
 This project is a complete user authentication system (login and registration) built as part of Internship Task 1. It includes a robust backend for user data and authentication logic, and a responsive frontend for a smooth user experience.
 
